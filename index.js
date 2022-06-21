@@ -17,7 +17,8 @@ app.use(bodyParser.json());
 
 app.post('/qrcode', async (req, res) => {
 
-    const address = req.body;
+    const data = req.body;
+    const address = data.address;
     const text = "INSERT INTO keys_test(address)VALUES($1)"
     const values = [address]
 
